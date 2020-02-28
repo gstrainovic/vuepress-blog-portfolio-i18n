@@ -1,7 +1,6 @@
 ---
-tag: 
+entag: 
   - vue
-  - vuepress
 ---
 
 # EN Intro to VuePress

@@ -7,27 +7,26 @@ module.exports = {
                     id: "en",
                     dirname: "_en-blog",
                     path: "/en/blog/",
-                    itemPermalink: "/en/blog/:year/:month/:day/:slug",
+                    itemPermalink: "/en/blog/:year/:month/:day/:slug"
                 },
                 {
                     id: "de",
                     dirname: "_de-blog",
                     path: "/blog/",
-                    itemPermalink: "/blog/:year/:month/:day/:slug",
+                    itemPermalink: "/blog/:year/:month/:day/:slug"
                 }
             ],
             frontmatters: [
                 {
                     id: "tag",
                     keys: ['tag', 'tags'],
-                    path: '/tag/',
-                    layout: 'Tag',
-                    frontmatter: { title: 'Tag' },
-                    itemlayout: 'Tag',
-                    pagination: {
-                        perPagePosts: 3
-                    }
-                },
+                    path: '/blog/tags/',
+                },                
+                {
+                    id: "entag",
+                    keys: ['entag', 'entags'],
+                    path: '/en/blog/tags/',
+                }
             ]
         }]
     ],
@@ -35,12 +34,12 @@ module.exports = {
         // The key is the path for the locale to be nested under.
         // As a special case, the default locale can use '/' as its path.
         '/': {
-            lang: 'de-CH', // this will be set as the lang attribute on <html>
+            lang: 'de', // this will be set as the lang attribute on <html>
             title: 'Strainovic IT',
             description: 'Webseite, Portfolio und Blog von Strainovic IT'
         },
         '/en/': {
-            lang: 'en-US',
+            lang: 'en',
             title: 'Strainovic IT',
             description: 'Website, portfolio and blog of Strainovic IT'
         }
@@ -48,6 +47,7 @@ module.exports = {
 
     themeConfig: {
         displayAllHeaders: true ,
+
         locales: {
             '/': {
                 sidebar: 'auto',
@@ -67,10 +67,6 @@ module.exports = {
                 nav: [
                     { text: 'Start', link: '/' },
                     { text: 'Blog', link: '/blog/' }
-                ],
-                sidebar: [
-                    '/',
-                    '/blog/'
                 ]
             },
             '/en/': {
@@ -86,10 +82,6 @@ module.exports = {
                 nav: [
                     { text: 'Home', link: '/en/' },
                     { text: 'Blog', link: '/en/blog/' }
-                ],
-                sidebar: [
-                    '/en/',
-                    '/en/blog/'
                 ]
             }
         }

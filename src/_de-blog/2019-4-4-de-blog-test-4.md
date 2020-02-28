@@ -1,10 +1,9 @@
 ---
 tag: 
   - vue
-  - vuepress
 ---
 
-# DE Intro to VuePress 4
+# DE Intro to VuePress 4 vue
 
 - DE Introx to VuePress 4
 - Intro to VuePress

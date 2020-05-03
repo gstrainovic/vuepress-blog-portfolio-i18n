@@ -2,6 +2,19 @@
 module.exports = {
     plugins: [
         ['@vuepress/blog', {
+            sitemap: {
+                hostname: 'https://vuepress.strainovic-it.ch'
+            },
+            // comment: {
+            //     // Which service you'd like to use
+            //     service: 'disqus',
+            //     // The owner's name of repository to store the issues and comments.
+            //     shortname: 'vuepress-plugin-blog',
+            // },
+            // .vuepress/config.js
+            feed: {
+                canonical_base: 'https://vuepress.strainovic-it.ch',
+            },
             directories: [
                 {
                     id: "en",
@@ -21,7 +34,7 @@ module.exports = {
                     id: "tag",
                     keys: ['tag', 'tags'],
                     path: '/blog/tags/',
-                },                
+                },
                 {
                     id: "entag",
                     keys: ['entag', 'entags'],
@@ -46,7 +59,7 @@ module.exports = {
     },
 
     themeConfig: {
-        displayAllHeaders: true ,
+        displayAllHeaders: true,
 
         locales: {
             '/': {
@@ -66,8 +79,15 @@ module.exports = {
                 },
                 nav: [
                     { text: 'Start', link: '/' },
-                    { text: 'Blog', link: '/blog/' }
-                ]
+                    { text: 'Blog', link: '/blog/' }, 
+                    {
+                      text: 'Referenzen & Portfolio',
+                      ariaLabel: 'Referenzen & Portfolio',
+                      items: [
+                        { text: 'Webdesign', link: '/referenzen-und-portfolio/webdesign/' },
+                      ]
+                    }
+                  ]
             },
             '/en/': {
                 sidebar: 'auto',
@@ -81,7 +101,14 @@ module.exports = {
                 },
                 nav: [
                     { text: 'Home', link: '/en/' },
-                    { text: 'Blog', link: '/en/blog/' }
+                    { text: 'Blog', link: '/en/blog/' },
+                    {
+                        text: 'References & Portfolio',
+                        ariaLabel: 'References & Portfolio',
+                        items: [
+                          { text: 'Webdesign', link: '/en/references-and-portfolio/webdesign/' },
+                        ]
+                      }
                 ]
             }
         }
